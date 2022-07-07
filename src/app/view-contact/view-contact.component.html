@@ -1,0 +1,45 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <p class="h3"> <i class="fa fa-eye">&nbsp;</i> View Contact</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloribus quo nemo ducimus quasi
+                tempora, eius reprehenderit pariatur sint placeat error repellat dignissimos assumenda quae magnam,
+                vitae quas obcaecati culpa.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="loading">
+    <app-spinner></app-spinner>
+</div>
+<div *ngIf="!loading && errorMessage">
+    <div class="container">
+        <div class="row">
+            <p class="h4">{{errorMessage}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="!loading && isNotEmpty()" class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <img src={{contacts.photo}} style="width:200px;border-radius: 50%;" alt="">
+            </div>
+            <div class="col-sm-6">
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-success">Name : <span class="fw-bold">{{contacts.name}}</span></li>
+                    <li class="list-group-item list-group-item-success">Email : <span class="fw-bold">{{contacts.email}}</span></li>
+                    <li class="list-group-item list-group-item-success">Mobile : <span class="fw-bold">{{contacts.mobile}}</span></li>
+                    <li class="list-group-item list-group-item-success">Company : <span class="fw-bold">{{contacts.company}}</span></li>
+                    <li class="list-group-item list-group-item-success">Title : <span class="fw-bold">{{contacts.title}}</span></li>
+                    <li class="list-group-item list-group-item-success">Contact group : <span class="fw-bold">{{myGroup.name}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <a routerLink="/" class="btn btn-warning"><i class="fa fa-arrow-circle-left">&nbsp;</i> Go Back</a>
+            </div>
+        </div>
+   </div>

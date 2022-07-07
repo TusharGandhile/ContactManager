@@ -1,0 +1,53 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col">
+            <p class="h3"> <i class="fa fa-pen ">&nbsp;</i> Edit Contact
+                <!-- <button class="btn-success btn-sm">New Contact</button> -->
+            </p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloribus quo nemo ducimus quasi
+                tempora, eius reprehenderit pariatur sint placeat error repellat dignissimos assumenda quae magnam,
+                vitae quas obcaecati culpa.
+            </p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <form [formGroup]="UpdateForm">
+                <div class="mb-2">
+                    <input formControlName="name" type="text" placeholder="Enter name.." class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="file" formControlName="photo" placeholder="Photo url.." class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="text" formControlName="email" placeholder="Enter email.." class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="text" formControlName="mobile" placeholder="Enter phone number.." class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="text" formControlName="company" placeholder="Enter company name.." class="form-control">
+                </div>
+                <div class="mb-2">
+                    <input type="text" placeholder="Enter title.." formControlName="title" class="form-control">
+                </div>
+                <div class="mb-2">
+                    <select class="form-control" formControlName="groupId">
+                        <option value="">select type</option>
+                        <option *ngFor="let item of group" value="{{item.id}}">{{item.name}}</option>
+
+                    </select>
+                </div>
+                <div class="mb-2">
+                    <input type="submit" value="Update" class="btn btn-success" (click)="UpdateContactForm(contacts.id)">
+                    <a routerLink="/" class="btn btn-warning ms-2">Cancel</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <img src={{contacts.photo}} style="width:150px;border-radius: 50%;" alt="">
+        </div>
+    </div>
+</div>
