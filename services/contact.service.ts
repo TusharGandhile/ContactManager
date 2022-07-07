@@ -9,7 +9,7 @@ import { MyGroup } from 'src/app/models/myGroup';
 })
 export class ContactService {
 baseUrl='http://localhost:4000'
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient ) { }
   
 
   //contacts api//
